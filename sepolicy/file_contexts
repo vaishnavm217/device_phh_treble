@@ -6,3 +6,11 @@
 
 /system/bin/fsck\.exfat                 u:object_r:fsck_exec:s0
 /system/bin/fsck\.ntfs                  u:object_r:fsck_exec:s0
+
+# Fingerprint fix for Huawei
+/dev/block/bootdevice/by-name/secure_storage    u:object_r:secure_storage_block_device:s0
+# Secure storage
+/sec_storage            u:object_r:teecd_data_file:s0
+/sec_storage(/.*)?              u:object_r:teecd_data_file:s0
+/data/sec_storage_data          u:object_r:teecd_data_file:s0
+/data/sec_storage_data_users            u:object_r:teecd_data_file:s0
